@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/projetreparation?useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+
+        <!-- JDBC connection pool (use built-in) -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Enable SQL output -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Auto-create tables -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Annotated entity classes -->
+        <!--<mapping class="metier.Product"/>-->
+        <mapping class="DAO.Utilisateur"/>
+        <mapping class="DAO.Proprietaire"/>
+        <mapping class="DAO.Reparateur"/>
+        <mapping class="DAO.Caisse"/>
+        <mapping class="DAO.Emprunt"/>
+        <mapping class="DAO.Reparation"/>
+        <mapping class="DAO.Client"/>
+        <mapping class="DAO.Piece"/>
+
+    </session-factory>
+</hibernate-configuration>
